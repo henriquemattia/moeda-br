@@ -8,7 +8,7 @@ export default {
 
   computed: {
     fieldValue() {
-      return this.field.displayedAs || this.field.value
+      return Intl.NumberFormat('pt-BR', { minimumFractionDigits: 2 }).format(this.field.displayedAs || this.field.value)
     },
   }
 }

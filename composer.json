@@ -1,0 +1,29 @@
+{
+    "name": "henriquemattia/moeda-br",
+    "description": "A Laravel Nova custom mask field for the brazilian currency.",
+    "keywords": [
+        "laravel",
+        "nova"
+    ],
+    "license": "MIT",
+    "require": {
+        "php": "^7.3|^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Henriquemattia\\MoedaBr\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Henriquemattia\\MoedaBr\\FieldServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}

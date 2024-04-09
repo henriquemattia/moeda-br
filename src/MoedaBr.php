@@ -12,4 +12,9 @@ class MoedaBr extends Field
      * @var string
      */
     public $component = 'moeda-br';
+
+    public function required($callback = true)
+    {
+        return $this->rules(['required']);
+    }
 }

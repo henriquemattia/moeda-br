@@ -17,4 +17,19 @@ class MoedaBr extends Field
     {
         return $this->rules(['required']);
     }
+
+    public function displayValueDividedBy($value = null)
+    {
+        return $this->withMeta([
+            'divideValue' => intval($value)
+        ]);
+    }
+
+    public function multiplyValueBy($value = null)
+    {
+        return $this->withMeta([
+            'multiplyValue' => intval($value)
+        ]);
+    }
+
 }

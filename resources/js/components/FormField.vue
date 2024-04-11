@@ -33,11 +33,23 @@ export default {
         return {
             localValue: this.value,
             isRequired: this.field.required,
-            isRequiredAndEmpty: false
+            isRequiredAndEmpty: false,
+            multipliedValue: null
         }
     },
-     updated() {
+
+    created() {
+        if (this.field.displayValueDividedBy || this.field.multiplyValue) {
+            this.localValue = this.localValue / 100
+        }
+    },
+
+    updated() {
         this.isRequiredAndEmpty = this.isRequired && this.field.value == null && this.hasError;
+
+        if (this.field.multiplyValue && this._.data.localValue !== 0){
+            this.multipliedValue = this._.data.localValue * this.field.multiplyValue
+        }
     },
 
     computed: {
@@ -66,7 +78,7 @@ export default {
          * Fill the given FormData object with the field's internal value.
          */
         fill(formData) {
-            formData.append(this.fieldAttribute, this.localValue || '')
+            formData.append(this.fieldAttribute, this.multipliedValue || this.localValue ||'')
         },
     },
 }

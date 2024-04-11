@@ -39,7 +39,7 @@ export default {
     },
 
     created() {
-        if (this.field.displayValueDividedBy || this.field.multiplyValue) {
+        if (this.field.divideValue) {
             this.localValue = this.localValue / 100
         }
     },
@@ -47,7 +47,7 @@ export default {
     updated() {
         this.isRequiredAndEmpty = this.isRequired && this.field.value == null && this.hasError;
 
-        if (this.field.multiplyValue && this._.data.localValue !== 0){
+        if (this.field.multiplyValue){
             this.multipliedValue = this._.data.localValue * this.field.multiplyValue
         }
     },

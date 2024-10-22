@@ -48,7 +48,7 @@ export default {
         this.isRequiredAndEmpty = this.isRequired && this.field.value == null && this.hasError;
 
         if (this.field.multiplyValue){
-            this.multipliedValue = this._.data.localValue * this.field.multiplyValue
+            this.multipliedValue = Math.trunc(this._.data.localValue * this.field.multiplyValue);
         }
     },
 

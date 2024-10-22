@@ -40,7 +40,7 @@ export default {
 
     created() {
         if (this.field.divideValue) {
-            this.localValue = this.localValue / 100
+            this.localValue = Math.trunc(this.localValue * this.field.divideValue);
         }
     },
 
